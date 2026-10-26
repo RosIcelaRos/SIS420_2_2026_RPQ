@@ -1,0 +1,13 @@
+Acerca del conjunto de datos
+🏦 Conjunto de datos sintéticos de aprobación de préstamos
+
+Un conjunto de datos realista y de alta calidad para la modelización del riesgo crediticio.
+
+🎯 ¿Por qué este conjunto de datos?
+
+La mayoría de los conjuntos de datos de préstamos en Kaggle tienen patrones poco realistas donde:
+
+❌ Las puntuaciones crediticias no importan
+❌ La lógica de aprobación está al revés
+❌ Los modelos aprenden patrones sin sentido
+A diferencia de la mayoría de los conjuntos de datos de préstamos disponibles en línea, este se basa en criterios bancarios reales de instituciones financieras estadounidenses y canadienses. Fruto de tres años de experiencia práctica en el sector financiero, el conjunto de datos incorpora correlaciones realistas y lógica empresarial que reflejan cómo se toman las decisiones de préstamo en la práctica. Esto lo convierte en la herramienta ideal para científicos de datos que buscan desarrollar proyectos que demuestren no solo su capacidad de programación, sino también una comprensión profunda del modelado del riesgo crediticio.

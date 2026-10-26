@@ -1,3 +1,4 @@
+Pathway,Nodes,Edges,Connected_Components,Network_Diameter,Network_Radius,Shortest_Path,Characteristic_Path_Length,Avg_num_Neighbours,Isolated_Nodes,Number_of_Self_Loops,Multi-edge_Node_Pair,Neighborhood_Connectivity,Outdegree,Stress,SelfLoops,Partner_Of_Multi_Edged_Node_Pairs,Edge_Count,Betweenness_Centrality,Indegree,Eccentricity,Closeness_Centrality,Average_Shortest_Path_Length,Clustering_Coefficient
 aac00010,26,43,2,7,1,211,3.222748815,3.230769231,0,0,1,4.125757576,1.653846154,27,0,0.076923077,3.307692308,0.062418301,1.653846154,3.923076923,0.37519895,2.21011373,0.221153846
 aac00020,27,52,2,10,1,226,3.411504425,3.851851852,0,0,0,4.516696061,1.925925926,26.62962963,0,0,3.851851852,0.036567364,1.925925926,4.074074074,0.399880441,2.168686658,0.290196943
 aac00030,26,53,2,6,1,202,2.732673267,3.769230769,0,0,3,4.286492674,2.038461538,14.96153846,0,0.230769231,4.076923077,0.02660383,2.038461538,3.115384615,0.430367508,1.864288063,0.230311355

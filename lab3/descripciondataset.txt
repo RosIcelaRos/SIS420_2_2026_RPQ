@@ -1,0 +1,34 @@
+Para explicarlo de forma sencilla: El dataset no contiene datos de pacientes, precios ni ventas, sino información sobre cómo funcionan las reacciones químicas dentro de las células vivas (metabolismo), convertidas en mapas matemáticos (redes o grafos).
+
+1. ¿Qué es KEGG y qué son las "Rutas Metabólicas"?
+KEGG (Kyoto Encyclopedia of Genes and Genomes) es una base de datos mundial muy famosa que recopila los mapas de las rutas metabólicas de los seres vivos (por ejemplo, cómo tu cuerpo convierte los alimentos en energía, o cómo se sintetizan ciertas moléculas).
+
+Una ruta metabólica es como un plano de una ciudad con calles y cruces, donde las "calles" son las reacciones químicas y los "cruces" son las moléculas y enzimas que participan en ellas.
+
+2. ¿Qué significa "Red de Relación Dirigida" (Relation Network (Directed))?
+En la descripción que compartiste se explica que las rutas de KEGG se pueden modelar de dos formas. En este dataset en particular (Red de Relación):
+
+Los nodos (puntos de la red): Son las enzimas y los genes que controlan los procesos.
+
+Las aristas (conexiones o líneas): Son los compuestos químicos (sustratos y productos) que fluyen entre esos genes/enzimas.
+
+Dirigida (Directed): Significa que las conexiones tienen una dirección específica (por ejemplo, el gen A produce una enzima que transforma el compuesto X en el compuesto Y, por lo que la interacción va de un punto a otro en un solo sentido o con un flujo determinado).
+
+3. ¿Qué contienen las columnas (variables) del dataset?
+Cada fila de este dataset representa una ruta o subred metabólica analizada. Con la ayuda de una herramienta llamada Cytoscape (muy usada para analizar redes biológicas), los autores calcularon métricas de teoría de grafos para cada red.
+
+Entre las variables más importantes que encontrarás están:
+
+Pathway: El nombre de la ruta metabólica de KEGG analizada.
+
+Nodes y Edges: Cuántos elementos (genes/enzimas) y cuántas conexiones componen esa red.
+
+Network Diameter y Radius: Medidas de qué tan "grande" o extendida es la red.
+
+Shortest Path / Average Shortest Path Length: La distancia promedio que recorre la información o los compuestos entre dos puntos de la red.
+
+ClusteringCoefficient (Coeficiente de agrupamiento): Mide qué tan conectados están los vecinos de un nodo entre sí (indica si hay "comunidades" o grupos muy unidos de reacciones).
+
+BetweennessCentrality y Stress: Identifican qué genes o enzimas son "cuellos de botella" o piezas clave y fundamentales para que toda la red funcione.
+
+Indegree / Outdegree: Cuántas conexiones entran o salen de los nodos en promedio.s

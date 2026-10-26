@@ -29,7 +29,7 @@ n = len(kilometraje)
 
 
 # -----------------------------------------------------------------
-# 2) PREDICCION Y COSTO (las mismas de siempre, sin derivadas)
+# 2) PREDICCION Y COSTO 
 # -----------------------------------------------------------------
 def predecir(b, w, x):
     return b + w * x
@@ -37,29 +37,23 @@ def predecir(b, w, x):
 
 def calcular_costo(b, w, x_datos, y_datos):
     suma_error_cuadrado = 0
-    for i in range(len(x_datos)):                    # <-- repetitiva
+    for i in range(len(x_datos)):                    
         error = predecir(b, w, x_datos[i]) - y_datos[i]
         suma_error_cuadrado += error ** 2
     return suma_error_cuadrado / len(x_datos)
 
 
 # -----------------------------------------------------------------
-# 3) BUSQUEDA ALEATORIA (sin gradiente, sin derivadas)
+# 3) BUSQUEDA ALEATORIA 
 # -----------------------------------------------------------------
 def busqueda_aleatoria(x_datos, y_datos,
                         intentos_totales=200000,
                         paso_inicial=50.0,
                         paciencia=500,
                         paso_minimo=0.0001):
-    """
-    paso_inicial : tamano maximo del "salto" aleatorio al inicio
-    paciencia    : cuantos intentos seguidos sin mejora se toleran
-                   antes de reducir el paso
-    paso_minimo  : cuando el paso se vuelve mas pequeno que esto,
-                   se detiene la busqueda (ya no vale la pena seguir)
-    """
+   
 
-    random.seed(42)   # para que el resultado sea reproducible
+    random.seed(42)   
 
     b = 0.0
     w = 0.0
@@ -67,7 +61,7 @@ def busqueda_aleatoria(x_datos, y_datos,
     paso = paso_inicial
     intentos_sin_mejora = 0
 
-    for intento in range(intentos_totales):          # <-- REPETITIVA
+    for intento in range(intentos_totales):          
 
         # Generar una variacion aleatoria dentro de [-paso, +paso]
         b_candidato = b + random.uniform(-paso, paso)
@@ -76,7 +70,7 @@ def busqueda_aleatoria(x_datos, y_datos,
         costo_candidato = calcular_costo(b_candidato, w_candidato,
                                           x_datos, y_datos)
 
-        # ---- Estructura DECISIVA: aceptar o descartar el cambio ----
+        # ---- aceptar o descartar el cambio ----
         if costo_candidato < mejor_costo:
             b = b_candidato
             w = w_candidato
@@ -85,17 +79,17 @@ def busqueda_aleatoria(x_datos, y_datos,
         else:
             intentos_sin_mejora += 1
 
-        # ---- Estructura DECISIVA: reducir el paso si no hay mejora ----
+        # ---- reducir el paso si no hay mejora ----
         if intentos_sin_mejora >= paciencia:
             paso = paso / 2
             intentos_sin_mejora = 0
 
-        # ---- Estructura DECISIVA: reportar avance ----
+        # ---- reportar avance ----
         if intento % 20000 == 0:
             print(f"Intento {intento:>6} | Costo (MSE): {mejor_costo:,.2f} "
                   f"| b={b:.4f}  w={w:.4f}  | paso={paso:.6f}")
 
-        # ---- Estructura DECISIVA: detener si el paso ya es minusculo ----
+        # ----  detener si el paso ya es minusculo ----
         if paso < paso_minimo:
             print(f"Paso demasiado pequeno, busqueda detenida en el intento {intento}")
             break
